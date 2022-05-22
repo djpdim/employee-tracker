@@ -62,10 +62,10 @@ function mainMenu() {
                     updateEmployeeRole()
                     break
                 case "view employees by manager":
-                    updateEmployeeManager()
+                    viewEmployeeByManager()
                     break
                 case "update employee's manager":
-                    updateManager()
+                    updateEmployeeManager()
                     break
                 case "delete a department":
                     removeDepartment()
@@ -137,7 +137,7 @@ function updateEmployeeRole() {
 function removeEmployee() {
     db.Employee.getEmployees(employees => {
         promptSelectEmployee(employees).then(function (employeeid) {
-            db.Employee.removeEmployee(employeeid, employee => {
+            db.Employee.removeEmployee(employeeid, () => {
                 mainMenu()
             })
         })
@@ -148,7 +148,7 @@ function removeEmployee() {
 function removeRole() {
     db.Role.getRoles(roles => {
         promptSelectRole(roles).then(function (roleid) {
-            db.Role.removeRole(roleid, role => {
+            db.Role.removeRole(roleid, () => {
                 mainMenu()
             })
         })
@@ -160,7 +160,7 @@ function removeRole() {
 function removeDepartment() {
     db.Department.getDepartments(departments => {
         promptSelectDepartment(departments).then(function (departmentid) {
-            db.Department.removeDepartment(departmentid, department => {
+            db.Department.removeDepartment(departmentid, () => {
                 mainMenu()
             })
         })
@@ -401,6 +401,19 @@ function displayDepartments(dept) {
             return acc
         }, {})
         console.table(departments)
+        mainMenu()
+    })
+}
+
+function viewEmployeeByManager() {
+    //get all the employee list
+    db.Employee.getEmployees(employees => {
+        console.log("======= Employees ========")
+        employees = employees.reduce((acc, { id, ...x }) => {
+            acc[id] = x
+            return acc
+        }, {})
+        console.table(employees)
         mainMenu()
     })
 }
