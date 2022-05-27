@@ -10,6 +10,10 @@ Link to the github app:[employee-tracker](https://github.com/djpdim/employee-tra
 
 Link to the github page:[employee-tracker](https://djpdim.github.io/employee-tracker/)
 
+Demo: [employee-tracker](https://drive.google.com/file/d/1FIiT_98nkHaRGleUP-71I_gVSSA4IQh4/view)
+
+![demogif](./assets//demo//employeetr.gif)
+
 ## Tample of Content
 
 -   [Installation](#installation)
