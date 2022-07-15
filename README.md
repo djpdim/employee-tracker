@@ -25,9 +25,10 @@ Demo: [employee-tracker](https://drive.google.com/file/d/1FIiT_98nkHaRGleUP-71I_
 
 ## Installation
 
--   The user should clone the repository from GitHub and NPM install and MySQL.
+-   The user should clone the repository from GitHub and run NPM install.
+-   Then root into mySQL and source the schema and seed files from the db folder.
 
-*   You can run the app by node start or npm start.
+*   You can run the app by node server or npm start.
 
 ## Usage
 
@@ -50,11 +51,18 @@ A command-line application that at a minimum allows the user to:
 
 ## Badges
 
-![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/djpdim/employee-tracker?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/djpdim/employee-tracker?style=flat&logo=appveyor)
+![Badge for GitHub repo count of languages](https://img.shields.io/github/languages/count/djpdim/employee-tracker?style=flat&logo=appveyor)
+![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/djpdim/employee-tracker?style=flat&logo=appveyor)
+![Badge for GitHub last commit](https://img.shields.io/github/last-commit/djpdim/employee-tracker?style=flat&logo=appveyor)
+![Badge for GitHub Code Size](https://img.shields.io/github/languages/code-size/djpdim/employee-tracker?style=flat&logo=appveyor)
+![Badge for GitHub Repo Size](https://img.shields.io/github/repo-size/djpdim/employee-tracker?style=flat&logo=appveyor)
+![Badge for GitHub Total Lines](https://img.shields.io/tokei/lines/github/djpdim/employee-tracker?style=flat&logo=appveyor)
 
 Check out the badges hosted by [shields.io](https://shields.io/).
 
 ## Features
+
+<img src="https://img.shields.io/github/followers/djpdim?style=social" alt="Followers" />
 
 ## Questions
 
