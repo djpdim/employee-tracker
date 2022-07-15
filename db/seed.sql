@@ -1,32 +1,29 @@
-USE etracker_DB;
+INSERT INTO department (name)
+VALUES
+('IT'),
+('Finance & Accounting'),
+('Sales & Marketing'),
+('Operations');
 
-INSERT INTO Department (name) VALUES
-("Sales"), ("Finance"), ("Engineering"), ("Legal");
+INSERT INTO role (title, salary, department_id)
+VALUES
+('Full Stack Developer', 85000, 1),
+('Software Engineer', 125000, 1),
+('Accountant', 60000, 2),
+('Financial Analyst', 155000, 2),
+('Marketing Coordinator', 75000, 3),
+('Sales Lead', 95000, 3),
+('Project Manager', 105000, 4),
+('Operations Manager', 95000, 4);
 
-INSERT INTO Role (title, salary, department_id) VALUES
-("Salesperson", 80000, 1),
-("Sales Lead", 10000, 1),
-("Lead Engineering", 150000, 3),
-("Software Engineering", 120000, 3),
-("Accountant", 125000, 2),
-("Lawyer", 190000, 4),
-("Legal Team Lead", 250000, 4);
 
-INSERT INTO Employee (first_name, last_name, role_id) VALUES
-("Joyce","Thomas",7),
-("Wanda","Long",3),
-("Paula","Martin",3),
-("Brenda","Nelson",2),
-("Elizabeth","Walker",5);
-
-INSERT INTO Employee (first_name, last_name, role_id, manager_id) VALUES
-("Roger","Baker",1,2),
-("Joan","James",1,2),
-("Aaron","Russel",4,7),
-("Louise","Flores",1,2),
-("Robert","Wilson",4,7),
-("Lawrence","Ward",6,7),
-("Teresa","Bennet",6,7),
-("David","Ross",4,11),
-("Walter","Perry",4,11),
-("Evelyn","Diaz",4,11);
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES
+('John', 'Smith', 2, null),
+('Aaliyah', 'Brown', 1, 1),
+('Michael', 'Miller', 4, null),
+('Ana', 'Martinez', 3, 3),
+('Franklin', 'Moore', 6, null),
+('Maria', 'Ramirez', 5, 5),
+('Felix', 'Jones', 7, null),
+('Sasha', 'Almonte', 8, 7);

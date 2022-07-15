@@ -1,33 +1,29 @@
-DROP DATABASE IF EXISTS etracker_DB;
-CREATE DATABASE etracker_DB;
-USE etracker_DB;
-DROP TABLE IF EXISTS Department;
-DROP TABLE IF EXISTS Role;
-DROP TABLE IF EXISTS Employee;
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
+USE employee_db;
 
-CREATE TABLE Department
-(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    CONSTRAINT UC_name UNIQUE(name)
+CREATE TABLE department (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE Role
-(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE role (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
-    salary DECIMAL(10,2) default 0,
-    department_id INT UNSIGNED,
-    CONSTRAINT FK_department FOREIGN KEY (department_id) REFERENCES Department(id) ON DELETE CASCADE
+    salary DECIMAL NOT NULL,
+    department_id INTEGER,
+    INDEX dep_ind (department_id),
+    CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department (id) ON DELETE SET NULL
 );
 
-CREATE TABLE Employee
-(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE employee (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INT UNSIGNED NOT NULL,
-    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES Role(id) ON DELETE CASCADE,
-    manager_id INT UNSIGNED,
-    CONSTRAINT FK_manager FOREIGN KEY (manager_id) REFERENCES Employee(id) ON DELETE SET NULL
+    role_id INTEGER,
+    INDEX role_ind (role_id),
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role (id) ON DELETE SET NULL,
+    manager_id INTEGER,
+    INDEX manager_ind (manager_id),
+    CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee (id) ON DELETE SET NULL
 );
